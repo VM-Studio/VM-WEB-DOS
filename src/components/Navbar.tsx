@@ -24,6 +24,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
   const navItems = [
     { href: '/', label: 'INICIO' },   
     { href: '/casos-de-estudio', label: 'CASOS DE ESTUDIO' },
+    { href: '/app', label: 'APP' },
     { href: '/cotizador', label: 'COTIZADOR' },
     { href: '/contacto', label: 'CONTACTO' },
   ];
