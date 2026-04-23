@@ -28,6 +28,7 @@ function trackWhatsApp() {
 }
 
 const ETICKETPRO = "/eticketproo.gif";
+const WoodPallet = "/pallets.gif";
 const Yesica = "/yesica-oviedo.gif";
 const AJR = "/ajr.gif";
 const Aspen = "/aspen.gif";
@@ -64,6 +65,17 @@ export default function CaseStudiesPage() {
     },
     {
       id: '2',
+      title: 'Wood Pallet: Pallets de madera para cada necesidad',
+      excerpt: 'Desarrollamos el sitio web de Wood Pallet, empresa familiar con más de 20 años de trayectoria en fabricación y venta de pallets de madera nuevos y seminuevos. El sitio incluye catálogo completo de productos con visualización 3D interactiva, cotizador online, sección de servicios, posicionamiento SEO y formulario de contacto directo.',
+      client: 'Wood Pallet',
+      industry: 'INDUSTRIA & LOGÍSTICA',
+      services: ['Desarrollo Web', 'Catálogo con Modelos 3D', 'Cotizador Online', 'SEO'],
+      results: 'Presencia online desde cero, captación de clientes B2B',
+      slug: 'https://woodpallets.com.ar',
+      image: WoodPallet,
+    },
+    {
+      id: '3',
       title: 'Yesica Oviedo: Desarrollo Inmobiliario',
       excerpt: 'Desarrollamos una página web completa con formulario de contacto, optimización de SEO, blog con artículos, llamadas a la acción y otras características para Yesica Oviedo.',
       client: 'Yesica Oviedo',
@@ -74,7 +86,7 @@ export default function CaseStudiesPage() {
       image: Yesica,
     },
     {
-      id: '3',
+      id: '4',
       title: 'Organización AJR: Broker de Seguros',
       excerpt: 'Creamos una página web para el broker de seguros AJR, completamente optimizada para búsquedas locales en Google, perfiles de Google My Business, formularios de contacto y una interfaz para manejar consultas.',
       client: 'Organización AJR',
@@ -85,7 +97,7 @@ export default function CaseStudiesPage() {
       image: AJR,
     },
     {
-      id: '4',
+      id: '5',
       title: 'The Aspen Sound: Banda en vivo',
       excerpt: 'Desarrollamos una página web para la reconocida banda The Aspen Sound, presentando su repertorio, historial de eventos, formularios de contacto para contratación y optimización en Google.',
       client: 'The Aspen Sound',
@@ -96,7 +108,7 @@ export default function CaseStudiesPage() {
       image: Aspen,
     },
     {
-      id: '5',
+      id: '6',
       title: 'All Broker',
       excerpt: 'Desarrollamos una página web básica para un broker de seguros en Buenos Aires. Incluye secciones informativas del broker, formularios de contacto y presencia básica en Google.',
       client: 'All Broker SRL',
