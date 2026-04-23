@@ -28,7 +28,7 @@ function trackWhatsApp() {
 }
 
 const ETICKETPRO = "/eticketproo.gif";
-const WoodPallet = "/pallets.gif";
+const WoodPallet = "/pallet.gif";
 const Yesica = "/yesica-oviedo.gif";
 const AJR = "/ajr.gif";
 const Aspen = "/aspen.gif";
