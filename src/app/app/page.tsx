@@ -99,6 +99,7 @@ export default function AppPage() {
                   alt="Panel de cliente VM App"
                   width={340}
                   height={220}
+                  unoptimized
                   className="w-full h-auto"
                   priority
                 />
@@ -113,6 +114,7 @@ export default function AppPage() {
                   alt="Portada VM App"
                   width={220}
                   height={420}
+                  unoptimized
                   className="w-full h-auto"
                   priority
                 />
@@ -127,6 +129,7 @@ export default function AppPage() {
                   alt="Inicio de sesión VM App"
                   width={200}
                   height={380}
+                  unoptimized
                   className="w-full h-auto"
                   priority
                 />
@@ -136,13 +139,13 @@ export default function AppPage() {
             {/* Mobile: stacked screenshots */}
             <div className="flex lg:hidden gap-4 justify-center">
               <div className="w-[140px] rounded-2xl overflow-hidden shadow-xl border border-gray-100">
-                <Image src="/vmapp1.png" alt="Portada VM App" width={140} height={260} className="w-full h-auto" />
+                <Image src="/vmapp1.png" alt="Portada VM App" width={140} height={260} unoptimized className="w-full h-auto" />
               </div>
               <div className="w-[140px] rounded-2xl overflow-hidden shadow-xl border border-gray-100 mt-8">
-                <Image src="/vmapp2.png" alt="Login VM App" width={140} height={260} className="w-full h-auto" />
+                <Image src="/vmapp2.png" alt="Login VM App" width={140} height={260} unoptimized className="w-full h-auto" />
               </div>
               <div className="w-[140px] rounded-2xl overflow-hidden shadow-xl border border-gray-100">
-                <Image src="/vmapp3.png" alt="Panel VM App" width={140} height={260} className="w-full h-auto" />
+                <Image src="/vmapp3.png" alt="Panel VM App" width={140} height={260} unoptimized className="w-full h-auto" />
               </div>
             </div>
 
@@ -214,7 +217,7 @@ export default function AppPage() {
                 className="w-[260px] sm:w-[300px] rounded-3xl overflow-hidden border border-gray-100"
                 style={{ boxShadow: '0 40px 100px -20px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.04)', transform: 'perspective(1000px) rotateY(-6deg) rotateX(4deg)' }}
               >
-                <Image src="/vmapp1.png" alt="Portada VM App" width={300} height={560} className="w-full h-auto" />
+                <Image src="/vmapp1.png" alt="Portada VM App" width={300} height={560} unoptimized className="w-full h-auto" />
               </div>
             </div>
           </div>
@@ -250,7 +253,7 @@ export default function AppPage() {
                 className="w-[260px] sm:w-[300px] rounded-3xl overflow-hidden border border-gray-100"
                 style={{ boxShadow: '0 40px 100px -20px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.04)', transform: 'perspective(1000px) rotateY(6deg) rotateX(4deg)' }}
               >
-                <Image src="/vmapp2.png" alt="Inicio de sesión VM App" width={300} height={560} className="w-full h-auto" />
+                <Image src="/vmapp2.png" alt="Inicio de sesión VM App" width={300} height={560} unoptimized className="w-full h-auto" />
               </div>
             </div>
           </div>
@@ -287,7 +290,7 @@ export default function AppPage() {
                 className="w-full max-w-[480px] rounded-2xl overflow-hidden border border-gray-100"
                 style={{ boxShadow: '0 40px 100px -20px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.04)', transform: 'perspective(1200px) rotateY(-5deg) rotateX(3deg)' }}
               >
-                <Image src="/vmapp3.png" alt="Panel de cliente VM App" width={480} height={320} className="w-full h-auto" />
+                <Image src="/vmapp3.png" alt="Panel de cliente VM App" width={480} height={320} unoptimized className="w-full h-auto" />
               </div>
             </div>
           </div>
