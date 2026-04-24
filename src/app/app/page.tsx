@@ -87,65 +87,56 @@ export default function AppPage() {
               </div>
             </div>
 
-            {/* ─ Floating screenshots ─ */}
-            <div className="relative h-[480px] hidden lg:block">
-              {/* vmapp3 — panel de cliente, fondo, inclinado */}
-              <div
-                className="absolute top-10 left-0 w-[340px] rounded-2xl overflow-hidden shadow-2xl border border-gray-100"
-                style={{ transform: 'perspective(900px) rotateY(8deg) rotateX(3deg)', zIndex: 1 }}
-              >
-                <Image
-                  src="/vmapp3.png"
-                  alt="Panel de cliente VM App"
-                  width={340}
-                  height={220}
-                  unoptimized
-                  className="w-full h-auto"
-                  priority
-                />
-              </div>
-              {/* vmapp1 — portada, centro, elevada */}
-              <div
-                className="absolute top-0 left-1/2 -translate-x-1/2 w-[220px] rounded-3xl overflow-hidden shadow-[0_32px_80px_-12px_rgba(0,0,0,0.25)] border border-gray-100"
-                style={{ transform: 'perspective(900px) rotateY(-4deg) rotateX(4deg) translateY(-16px)', zIndex: 3 }}
-              >
-                <Image
-                  src="/vmapp1.png"
-                  alt="Portada VM App"
-                  width={220}
-                  height={420}
-                  unoptimized
-                  className="w-full h-auto"
-                  priority
-                />
-              </div>
-              {/* vmapp2 — auth, derecha, inclinado */}
-              <div
-                className="absolute top-16 right-0 w-[200px] rounded-3xl overflow-hidden shadow-xl border border-gray-100"
-                style={{ transform: 'perspective(900px) rotateY(-10deg) rotateX(2deg)', zIndex: 2 }}
-              >
-                <Image
-                  src="/vmapp2.png"
-                  alt="Inicio de sesión VM App"
-                  width={200}
-                  height={380}
-                  unoptimized
-                  className="w-full h-auto"
-                  priority
-                />
-              </div>
-            </div>
-
-            {/* Mobile: stacked screenshots */}
-            <div className="flex lg:hidden gap-3 justify-center">
-              <div className="w-[95px] sm:w-[130px] rounded-2xl overflow-hidden shadow-xl border border-gray-100">
-                <Image src="/vmapp1.png" alt="Portada VM App" width={130} height={260} unoptimized className="w-full h-auto" />
-              </div>
-              <div className="w-[95px] sm:w-[130px] rounded-2xl overflow-hidden shadow-xl border border-gray-100 mt-8">
-                <Image src="/vmapp2.png" alt="Login VM App" width={130} height={260} unoptimized className="w-full h-auto" />
-              </div>
-              <div className="w-[95px] sm:w-[130px] rounded-2xl overflow-hidden shadow-xl border border-gray-100">
-                <Image src="/vmapp3.png" alt="Panel VM App" width={130} height={260} unoptimized className="w-full h-auto" />
+            {/* ─ Floating screenshots — mismo diseño en mobile y desktop, escalado con CSS ─ */}
+            {/* El contenedor externo define la altura visible según el scale aplicado */}
+            <div className="relative h-[270px] sm:h-[330px] lg:h-[480px] overflow-hidden lg:overflow-visible">
+              {/* Composición original de 550×480px, escalada proporcionalmente en mobile */}
+              <div className="absolute top-0 left-1/2 w-[550px] -translate-x-1/2 scale-[0.56] sm:scale-[0.68] lg:scale-100 origin-top">
+                {/* vmapp3 — panel de cliente, fondo, inclinado */}
+                <div
+                  className="absolute top-10 left-0 w-[340px] rounded-2xl overflow-hidden shadow-2xl border border-gray-100"
+                  style={{ transform: 'perspective(900px) rotateY(8deg) rotateX(3deg)', zIndex: 1 }}
+                >
+                  <Image
+                    src="/vmapp3.png"
+                    alt="Panel de cliente VM App"
+                    width={340}
+                    height={220}
+                    unoptimized
+                    className="w-full h-auto"
+                    priority
+                  />
+                </div>
+                {/* vmapp1 — portada, centro, elevada */}
+                <div
+                  className="absolute top-0 left-1/2 -translate-x-1/2 w-[220px] rounded-3xl overflow-hidden shadow-[0_32px_80px_-12px_rgba(0,0,0,0.25)] border border-gray-100"
+                  style={{ transform: 'perspective(900px) rotateY(-4deg) rotateX(4deg) translateY(-16px)', zIndex: 3 }}
+                >
+                  <Image
+                    src="/vmapp1.png"
+                    alt="Portada VM App"
+                    width={220}
+                    height={420}
+                    unoptimized
+                    className="w-full h-auto"
+                    priority
+                  />
+                </div>
+                {/* vmapp2 — auth, derecha, inclinado */}
+                <div
+                  className="absolute top-16 right-0 w-[200px] rounded-3xl overflow-hidden shadow-xl border border-gray-100"
+                  style={{ transform: 'perspective(900px) rotateY(-10deg) rotateX(2deg)', zIndex: 2 }}
+                >
+                  <Image
+                    src="/vmapp2.png"
+                    alt="Inicio de sesión VM App"
+                    width={200}
+                    height={380}
+                    unoptimized
+                    className="w-full h-auto"
+                    priority
+                  />
+                </div>
               </div>
             </div>
 
