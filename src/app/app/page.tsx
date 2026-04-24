@@ -50,7 +50,7 @@ export default function AppPage() {
         {/* blue glow */}
         <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-blue-100 rounded-full opacity-20 blur-3xl pointer-events-none" />
 
-        <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
 
             {/* ─ Text ─ */}
@@ -137,15 +137,15 @@ export default function AppPage() {
             </div>
 
             {/* Mobile: stacked screenshots */}
-            <div className="flex lg:hidden gap-4 justify-center">
-              <div className="w-[140px] rounded-2xl overflow-hidden shadow-xl border border-gray-100">
-                <Image src="/vmapp1.png" alt="Portada VM App" width={140} height={260} unoptimized className="w-full h-auto" />
+            <div className="flex lg:hidden gap-3 justify-center">
+              <div className="w-[95px] sm:w-[130px] rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                <Image src="/vmapp1.png" alt="Portada VM App" width={130} height={260} unoptimized className="w-full h-auto" />
               </div>
-              <div className="w-[140px] rounded-2xl overflow-hidden shadow-xl border border-gray-100 mt-8">
-                <Image src="/vmapp2.png" alt="Login VM App" width={140} height={260} unoptimized className="w-full h-auto" />
+              <div className="w-[95px] sm:w-[130px] rounded-2xl overflow-hidden shadow-xl border border-gray-100 mt-8">
+                <Image src="/vmapp2.png" alt="Login VM App" width={130} height={260} unoptimized className="w-full h-auto" />
               </div>
-              <div className="w-[140px] rounded-2xl overflow-hidden shadow-xl border border-gray-100">
-                <Image src="/vmapp3.png" alt="Panel VM App" width={140} height={260} unoptimized className="w-full h-auto" />
+              <div className="w-[95px] sm:w-[130px] rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                <Image src="/vmapp3.png" alt="Panel VM App" width={130} height={260} unoptimized className="w-full h-auto" />
               </div>
             </div>
 
@@ -154,7 +154,7 @@ export default function AppPage() {
       </section>
 
       {/* ── FEATURES ─────────────────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-[11px] font-medium tracking-[0.2em] text-gray-500">
@@ -183,11 +183,11 @@ export default function AppPage() {
       </section>
 
       {/* ── SCREENS SHOWCASE ─────────────────────────────── */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 overflow-hidden">
+      <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Row 1 — portada */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-14 lg:mb-24">
             <div>
               <span className="text-[11px] font-medium tracking-[0.2em] text-gray-500">
                 [ PANTALLA DE INICIO ]
@@ -223,7 +223,7 @@ export default function AppPage() {
           </div>
 
           {/* Row 2 — auth */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-14 lg:mb-24">
             <div className="lg:order-2">
               <span className="text-[11px] font-medium tracking-[0.2em] text-gray-500">
                 [ ACCESO SEGURO ]
@@ -299,7 +299,7 @@ export default function AppPage() {
       </section>
 
       {/* ── HOW IT WORKS ─────────────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-[11px] font-medium tracking-[0.2em] text-gray-500">
@@ -332,7 +332,7 @@ export default function AppPage() {
       </section>
 
       {/* ── CTA FINAL ────────────────────────────────────── */}
-      <section className="py-24 bg-gradient-to-r from-gray-900 to-blue-800">
+      <section className="py-16 lg:py-24 bg-gradient-to-r from-gray-900 to-blue-800">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-[11px] font-medium tracking-[0.2em] text-blue-300">
             [ TU PROYECTO ]
