@@ -97,6 +97,17 @@ export default function CotizadorSimple() {
     setError('')
     setLoading(true)
 
+    // Disparar descarga ANTES del await para que no sea bloqueada por el browser
+    if (service) {
+      const a = document.createElement('a')
+      a.href = service.pdf
+      a.download = `presupuesto-${service.id}.pdf`
+      a.target = '_blank'
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+    }
+
     try {
       await fetch('/api/submit-lead', {
         method: 'POST',
@@ -105,19 +116,13 @@ export default function CotizadorSimple() {
           name: form.name,
           email: form.email,
           phone: form.phone,
-          whatsapp: form.contactMethod === 'whatsapp' ? 'si' : 'no',
-          notes: `Servicio: ${service?.label ?? selectedService} | Quiere contacto: ${form.wantsContact} | Medio: ${form.contactMethod || '—'}`,
           service: service?.label ?? selectedService,
+          wantsContact: form.wantsContact,
           contactMethod: form.contactMethod,
         }),
       })
     } catch {
-      // No bloqueamos la descarga si falla el envío
-    }
-
-    // Abrir/descargar el PDF
-    if (service) {
-      window.open(service.pdf, '_blank')
+      // No bloqueamos el flujo si falla el envío
     }
 
     setStep(3)
