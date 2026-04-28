@@ -6,7 +6,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, company, email, phone, notes, whatsapp } = body;
+    const { name, company, email, phone, notes, whatsapp, service, contactMethod } = body;
 
     if (!name || !email) {
       return NextResponse.json(
@@ -26,6 +26,11 @@ export async function POST(req: NextRequest) {
           <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 16px 0;" />
           
           <table style="width: 100%; border-collapse: collapse;">
+            ${service ? `
+            <tr>
+              <td style="padding: 8px 0; color: #6b7280; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; width: 120px;">Servicio</td>
+              <td style="padding: 8px 0; color: #111827; font-size: 15px; font-weight: bold;">${service}</td>
+            </tr>` : ""}
             <tr>
               <td style="padding: 8px 0; color: #6b7280; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; width: 120px;">Nombre</td>
               <td style="padding: 8px 0; color: #111827; font-size: 15px;">${name}</td>
@@ -55,6 +60,11 @@ export async function POST(req: NextRequest) {
                 ${whatsapp === 'si' ? '✅ SÍ' : whatsapp === 'no' ? '❌ NO' : '— No especificado'}
               </td>
             </tr>
+            ${contactMethod ? `
+            <tr>
+              <td style="padding: 8px 0; color: #6b7280; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;">Contactar por</td>
+              <td style="padding: 8px 0; color: #111827; font-size: 15px; font-weight: bold; text-transform: capitalize;">${contactMethod}</td>
+            </tr>` : ""}
           </table>
 
           <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 16px 0;" />
