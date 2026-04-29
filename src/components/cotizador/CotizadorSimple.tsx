@@ -40,6 +40,12 @@ const services = [
     description: 'Software interno para gestionar tu negocio o empresa.',
     pdf: '/flyer-sistema-gestion.pdf',
   },
+  {
+    id: 'tienda-online',
+    label: 'Tienda Online (E-Commerce)',
+    description: 'Vendé tus productos en línea con carrito, pagos y gestión de stock.',
+    pdf: '/flyer-tienda-online.pdf',
+  },
 ]
 
 /* ── Tipos ─────────────────────────────────────────────────── */
@@ -96,17 +102,6 @@ export default function CotizadorSimple() {
     }
     setError('')
     setLoading(true)
-
-    // Disparar descarga ANTES del await para que no sea bloqueada por el browser
-    if (service) {
-      const a = document.createElement('a')
-      a.href = service.pdf
-      a.download = `presupuesto-${service.id}.pdf`
-      a.target = '_blank'
-      document.body.appendChild(a)
-      a.click()
-      document.body.removeChild(a)
-    }
 
     try {
       await fetch('/api/submit-lead', {
@@ -372,43 +367,60 @@ export default function CotizadorSimple() {
       )}
 
       {/* ══════════════════════════════════════════════════════
-          STEP 3 — Confirmación
+          STEP 3 — Visor de presupuesto
       ══════════════════════════════════════════════════════ */}
-      {step === 3 && (
-        <div className="text-center py-12">
-          <div className="inline-flex items-center justify-center w-14 h-14 border border-gray-200 text-gray-400 text-xs font-medium tracking-[0.2em] mb-8">
-            OK
-          </div>
-          <p className="text-[11px] font-medium tracking-[0.2em] text-gray-500 mb-4">
-            [ LISTO ]
-          </p>
-          <h2 className="text-2xl font-light text-gray-900 mb-3 tracking-tight">
-            Tu presupuesto se está{' '}
-            <strong className="font-semibold">abriendo.</strong>
-          </h2>
-          <p className="text-sm text-gray-500 font-light mb-1 max-w-sm mx-auto">
-            Si no se abrió automáticamente, hacé clic en el botón de abajo.
-          </p>
-          {form.wantsContact === 'si' && (
-            <p className="text-sm text-gray-500 font-light mb-8 max-w-sm mx-auto">
-              Te contactaremos a la brevedad por{' '}
-              <strong className="font-medium text-gray-700">
-                {form.contactMethod === 'email' ? 'email' : 'WhatsApp'}
-              </strong>
-              .
+      {step === 3 && service && (
+        <div>
+          {/* Encabezado */}
+          <div className="text-center mb-8">
+            <p className="text-[11px] font-medium tracking-[0.2em] text-gray-500 mb-3">
+              [ TU PRESUPUESTO ]
             </p>
-          )}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
-            {service && (
-              <a
-                href={service.pdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-4 bg-gradient-to-r from-gray-900 to-blue-700 text-white text-sm font-medium tracking-widest uppercase hover:opacity-90 transition-all duration-200"
-              >
-                ABRIR PRESUPUESTO
-              </a>
+            <h2 className="text-2xl font-light text-gray-900 mb-2 tracking-tight">
+              Aquí está tu cotización de{' '}
+              <strong className="font-semibold">{service.label}</strong>
+            </h2>
+            {form.wantsContact === 'si' && (
+              <p className="text-sm text-gray-500 font-light">
+                Te contactaremos a la brevedad por{' '}
+                <strong className="font-medium text-gray-700">
+                  {form.contactMethod === 'email' ? 'email' : 'WhatsApp'}
+                </strong>
+                .
+              </p>
             )}
+          </div>
+
+          {/* Botones encima del visor */}
+          <div className="flex flex-col sm:flex-row gap-3 mb-6">
+            <a
+              href={service.pdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 py-3 bg-gradient-to-r from-gray-900 to-blue-700 text-white text-xs font-medium tracking-widest uppercase text-center hover:opacity-90 transition-all duration-200"
+            >
+              ABRIR COTIZACIÓN
+            </a>
+            <a
+              href={service.pdf}
+              download={`cotizacion-${service.id}.pdf`}
+              className="flex-1 py-3 border border-gray-300 text-gray-700 text-xs font-medium tracking-widest uppercase text-center hover:bg-gray-50 hover:border-gray-400 transition-all duration-200"
+            >
+              DESCARGAR COTIZACIÓN
+            </a>
+          </div>
+
+          {/* Visor PDF embebido */}
+          <div className="border border-gray-200 bg-gray-50 overflow-hidden" style={{ height: '70vh' }}>
+            <iframe
+              src={service.pdf}
+              className="w-full h-full"
+              title={`Cotización ${service.label}`}
+            />
+          </div>
+
+          {/* Botón cotizar otro */}
+          <div className="text-center mt-8">
             <button
               type="button"
               onClick={() => {
@@ -416,9 +428,9 @@ export default function CotizadorSimple() {
                 setSelectedService('')
                 setForm(emptyForm)
               }}
-              className="px-8 py-4 border border-gray-300 text-gray-600 text-sm font-medium tracking-wider uppercase hover:bg-gray-50 transition-all duration-200"
+              className="text-sm text-gray-400 underline hover:text-gray-600 transition-colors"
             >
-              COTIZAR OTRO SERVICIO
+              Cotizar otro servicio
             </button>
           </div>
         </div>
