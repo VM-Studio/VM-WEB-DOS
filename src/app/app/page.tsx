@@ -90,14 +90,14 @@ export default function AppPage() {
             {/* ─ Floating screenshot ─ */}
             <div className="flex justify-center items-start lg:items-center">
               <div
-                className="w-[280px] sm:w-[360px] lg:w-[440px] rounded-2xl overflow-hidden shadow-2xl border border-gray-100"
+                className="w-[340px] sm:w-[460px] lg:w-[580px] rounded-2xl overflow-hidden shadow-2xl border border-gray-100"
                 style={{ transform: 'perspective(900px) rotateY(-6deg) rotateX(3deg)', boxShadow: '0 40px 100px -20px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.04)' }}
               >
                 <Image
                   src="/vmapp3.png"
                   alt="Panel de cliente VM App"
-                  width={440}
-                  height={280}
+                  width={580}
+                  height={370}
                   unoptimized
                   className="w-full h-auto"
                   priority
